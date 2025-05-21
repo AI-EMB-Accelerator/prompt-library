@@ -5,26 +5,53 @@
  */
 
 /* You can override the default Infima variables here. */
+/* === Font Import === */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* === Light Mode === */
 :root {
-  --ifm-color-primary: #2e8555;
-  --ifm-color-primary-dark: #29784c;
-  --ifm-color-primary-darker: #277148;
-  --ifm-color-primary-darkest: #205d3b;
-  --ifm-color-primary-light: #33925d;
-  --ifm-color-primary-lighter: #359962;
-  --ifm-color-primary-lightest: #3cad6e;
+  --ifm-font-family-base: 'Inter', sans-serif;
+
+  /* Brand Primary (Purple) */
+  --ifm-color-primary: #7030A0;
+  --ifm-color-primary-dark: #5f278b;
+  --ifm-color-primary-darker: #521f7a;
+  --ifm-color-primary-darkest: #441869;
+  --ifm-color-primary-light: #8b4fc0;
+  --ifm-color-primary-lighter: #a368d3;
+  --ifm-color-primary-lightest: #cba3ea;
+
+  /* Accent and layout */
+  --accent-orange: #f7630c;
+  --ifm-background-color: #ffffff;
+  --ifm-navbar-background-color: #ffffff;
+  --ifm-footer-background-color: #f9fafb;
+  --ifm-color-content: #000000;
+
+  /* Code and highlights */
   --ifm-code-font-size: 95%;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.05);
 }
 
-/* For readability concerns, you should choose a lighter palette in dark mode. */
+/* === Dark Mode === */
 [data-theme='dark'] {
-  --ifm-color-primary: #25c2a0;
-  --ifm-color-primary-dark: #21af90;
-  --ifm-color-primary-darker: #1fa588;
-  --ifm-color-primary-darkest: #1a8870;
-  --ifm-color-primary-light: #29d5b0;
-  --ifm-color-primary-lighter: #32d8b4;
-  --ifm-color-primary-lightest: #4fddbf;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+  --ifm-font-family-base: 'Inter', sans-serif;
+
+  /* Keep purple as the primary color */
+  --ifm-color-primary: #cba3ea;
+  --ifm-color-primary-dark: #a368d3;
+  --ifm-color-primary-darker: #8b4fc0;
+  --ifm-color-primary-darkest: #7030A0;
+  --ifm-color-primary-light: #d7b8ef;
+  --ifm-color-primary-lighter: #e5d5f5;
+  --ifm-color-primary-lightest: #f2ecfa;
+
+  --accent-orange: #f7630c;
+  --ifm-background-color: #18191a;
+  --ifm-navbar-background-color: #1f1f1f;
+  --ifm-footer-background-color: #1f1f1f;
+  --ifm-color-content: #ffffff;
+
+  --ifm-code-font-size: 95%;
+  --docusaurus-highlighted-code-line-bg: rgba(255, 255, 255, 0.05);
 }
