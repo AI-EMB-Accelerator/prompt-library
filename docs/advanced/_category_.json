@@ -1,0 +1,8 @@
+{
+  "label": "Advanced Prompts",
+  "position": 3,
+  "link": {
+    "type": "generated-index",
+    "description": "For more advanced use cases, i.e. file analysis and data extraction, the following prompts are a good place to start."
+  }
+}
