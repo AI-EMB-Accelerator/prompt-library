@@ -99,6 +99,40 @@ const config: Config = {
             },
           ],
         },
+        {
+          title: 'Demos',
+          items: [
+            {
+              label: 'Voter Registration',
+              href: 'https://voter-registration-app-aegrbzdaaycgcadj.eastus2-01.azurewebsites.net/',
+            },
+            {
+              label: 'Ballot Proofer',
+              href: 'https://ballot-proofer-app-grf0dydqctfsavf5.eastus2-01.azurewebsites.net/',
+            },
+            {
+              label: 'Log Summarizer',
+              href: 'https://election-machine-log-app-byfnffhff3gwhqbb.canadacentral-01.azurewebsites.net/',
+            }
+          ],
+        },
+        {
+          title: 'Microsoft AI',
+          items:[
+            {
+              label: 'Azure AI Foundry',
+              href: 'https://ai.azure.com',
+            },
+            {
+              label: 'Copilot Studio',
+              href: 'https://copilotstudio.microsoft.com',
+            },
+            {
+              label: 'Power Automate',
+              href: 'https://make.powerautomate.com',
+            }
+          ]
+        }
       ],
       copyright: `Copyright © ${new Date().getFullYear()} AI EMB Accelerator. Built with Docusaurus.`,
     },
