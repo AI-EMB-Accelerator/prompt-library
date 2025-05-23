@@ -1,6 +1,17 @@
 # Ballot Proofing
 
-## Defining Layout
+## Reasoning
+
+Proofing ballots is complex. This takes a simple approach but could be scaled to be more advanced. Ballots have distinct layouts typically, a typical bot may be unable to interpret a multiple column layout correctly. To handle this, multiple techniques are combined to keep it accessible but still provide more accurate results.
+
+The flow:
+1. Microsoft Document Intelligence to determine the ballot data 
+2. Azure AI to generate develop a ballot definition from data
+3. Azure AI to proof ballot between two ballot definitions
+
+## Ballot Definition
+
+A ballot definition is a description of a ballot. This is typically already available but in this case, the definition is created to proof with. 
 
 ### Agent Role
 
@@ -174,7 +185,9 @@ _Input this as a **general instructions**._
 Define the ballot definition using this PRIMARY LAYOUT: !!INSERT LAYOUT DATA!! and this BACKUP LAYOUT: !!INSERT ORIGINAL BALLOT FILE!!
 ```
 
-## Proofing Layout
+## Ballot Proofing
+
+There are many possibilities to proof on a ballot. This leans on ones that would be present in a ballot definition.
 
 ### Agent Role
 
@@ -275,7 +288,3 @@ _Input this as a **general instructions**._
 ```
 Proof this ballot using DEFINITION !!INSERT DEFINITION FROM ABOVE PROMPT!! and the BALLOT !!INSERT ORIGINAL BALLOT FILE!!
 ```
-
-## Reasoning
-
-Ballots have a very distinct layout typically, a typical bot may be unable to interpret a multiple column layout correctly. That is why this functionality needs one prompt to specifically pull the layout/definition and another to verify it for correctness.

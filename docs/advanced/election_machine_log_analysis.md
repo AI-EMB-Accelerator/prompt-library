@@ -1,5 +1,9 @@
 # Election Machine Log Analysis
 
+## Reasoning
+
+Election Machine Logs can be over 100 pages long, many AI models have limitations on file size or number of tokens that can be passed in, so there are a few prompts here. One to summarize one log section at a time, and then another to take all of these sections and make an overall summary for the document.
+
 ## Agent Role
 
 _This can be used as an introductory message to the agent to define it's role._
@@ -101,6 +105,4 @@ _Input this as a **general instructions**._
     - Errors and Warnings:
 ```
 
-## Reasoning
 
-Election Machine Logs can be over 100 pages long, many ai models have limitations on file size or number of tokens that can be passed in, so there are a few prompts here. One to summarize one log section at a time, and then another to take all of these sections and make an overall summary for the document.
