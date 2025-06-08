@@ -1,6 +1,6 @@
 {
   "label": "Advanced Prompts",
-  "position": 3,
+  "position": 4,
   "link": {
     "type": "generated-index",
     "description": "Advanced cases that may require more than just a chat interface."
