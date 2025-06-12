@@ -41,7 +41,7 @@ Use AI to help inform poll workers of their responsibilities and training instru
 
 > Oh no! The power is out in Nostera City! Can you help me draft a press statement calling for calm and explaining that voting will resume by hand-marked paper ballots as soon as flashlights can be distributed to the polls?
 
-> Act as a member of the communications staff of the elections office. I want to draft a press release stating that my office is prepared for the upcoming June 12th election. The themes to convey in the PR are <___>. It should be approximately 200 words.
+> Act as a member of the communications staff of the elections office. I want to draft a press release stating that my office is prepared for the upcoming June 12th election. The themes to convey in the PR are ___. It should be approximately 200 words.
 
 > Draft a clear, calm, and factual media holding statement for the Nostera Elections Commission responding to [insert situation]. The tone should be professional, transparent, and reassuring. Include: A brief acknowledgment of the situation; A commitment to transparency and accuracy; A statement that more information will be shared as it becomes available; Contact information or a reference to where updates will be posted (e.g., official website or social media)
 
