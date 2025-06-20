@@ -11,41 +11,41 @@ on:
 
 jobs:
   build:
-    runs-on: 'ubuntu-latest'
+    runs-on: "ubuntu-latest"
 
     steps:
-    - uses: actions/checkout@v2
+      - uses: actions/checkout@v2
 
-    - name: Set up Docker Buildx
-      uses: docker/setup-buildx-action@v2
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2
 
-    - name: Log in to registry
-      uses: docker/login-action@v2
-      with:
-        registry: https://promptlibraryregistry.azurecr.io/
-        username: ${{ secrets.AzureAppService_ContainerUsername_70634bb60a384993b0af4a37f0fc4dcd }}
-        password: ${{ secrets.AzureAppService_ContainerPassword_1ad423cd1fc84330856e2948220425cc }}
+      - name: Log in to registry
+        uses: docker/login-action@v2
+        with:
+          registry: https://promptlibraryregistry.azurecr.io/
+          username: ${{ secrets.AzureAppService_ContainerUsername_70634bb60a384993b0af4a37f0fc4dcd }}
+          password: ${{ secrets.AzureAppService_ContainerPassword_1ad423cd1fc84330856e2948220425cc }}
 
-    - name: Build and push container image to registry
-      uses: docker/build-push-action@v3
-      with:
-        push: true
-        tags: promptlibraryregistry.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_70634bb60a384993b0af4a37f0fc4dcd }}/githubactions/mcr.microsoft.com/appsvc/staticsite:${{ github.sha }}
-        file: ./Dockerfile
+      - name: Build and push container image to registry
+        uses: docker/build-push-action@v3
+        with:
+          push: true
+          tags: promptlibraryregistry.azurecr.io/${{ secrets.CUSTOM_CONTAINER_USERNAME }}/githubactions/mcr.microsoft.com/appsvc/staticsite:${{ github.sha }}
+          file: ./Dockerfile
 
   deploy:
     runs-on: ubuntu-latest
     needs: build
     environment:
-      name: 'production'
+      name: "production"
       url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
 
     steps:
-    - name: Deploy to Azure Web App
-      id: deploy-to-webapp
-      uses: azure/webapps-deploy@v2
-      with:
-        app-name: 'emb-prompt-library'
-        slot-name: 'production'
-        publish-profile: ${{ secrets.AzureAppService_PublishProfile_9b3ec78e7bdc4c37ae45b8bc75ceebaa }}
-        images: 'promptlibraryregistry.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_70634bb60a384993b0af4a37f0fc4dcd }}/githubactions/mcr.microsoft.com/appsvc/staticsite:${{ github.sha }}'
+      - name: Deploy to Azure Web App
+        id: deploy-to-webapp
+        uses: azure/webapps-deploy@v2
+        with:
+          app-name: "emb-prompt-library"
+          slot-name: "production"
+          publish-profile: ${{ secrets.AzureAppService_PublishProfile_9b3ec78e7bdc4c37ae45b8bc75ceebaa }}
+          images: "promptlibraryregistry.azurecr.io/${{ secrets.CUSTOM_CONTAINER_USERNAME }}/githubactions/mcr.microsoft.com/appsvc/staticsite:${{ github.sha }}"
